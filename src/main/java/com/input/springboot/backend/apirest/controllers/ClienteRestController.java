@@ -76,7 +76,7 @@ public class ClienteRestController {
 		try {
 			cliente = clienteService.findById(id);
 			if(cliente == null) {						
-				response.put("mensaje", "El cliente ID: ".concat(id.toString().concat(" no existe en la base de datos!")));   //string con response de error
+				response.put("mensaje", "El cliente ID: ".concat(id.toString().concat(" no existe en la base de datos! ESTE MENSAJE A SIDO MODIFICADO EN EL PORTATIL")));   //string con response de error
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);								
 			}
 			return new ResponseEntity<Cliente>(cliente, HttpStatus.OK); 

@@ -1,0 +1,19 @@
+MySQL Server / Workbench
+https://dev.mysql.com/downloads/file/?id=480824
+
+Spring Backend
+http://spring.io/tools
+
+Postman para test de web api
+https://www.getpostman.com/downloads/
+
+descomprimir el zip en el repositorio y sobrescribir archivos
+crear user en root de la BD con el password que se quiera (no comitear el archivo aplications.properties)
+	aqui esta el user de la base de datos con su contraseña
+	cambiar el user que hemos creado en el archivo aplications.properties
+Tambien se puede usar el mismo user:
+	con todos los permisos sergigimenez - Ss01111995
+
+si todo va bien ejecutar el proyecto como springBoot
+
+la BD de datos es drag an drop por lo que solo existe en local y cuando se esta ejecutando el proyecto

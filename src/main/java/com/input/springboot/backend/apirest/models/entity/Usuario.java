@@ -13,7 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn; 
 import javax.persistence.JoinTable; 
 import javax.persistence.ManyToMany; 
-import javax.persistence.Table; 
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint; 
  
 @Entity //Clase mapeada a una tabla de la BD 
 @Table(name="usuarios") //Nombre de la tabla que se crea en la BD por defecto pone el nombre de la clase 
@@ -31,13 +32,12 @@ public class Usuario implements Serializable{
 	 
 	private Boolean enabled; 
 	 
-	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL) //Relacion entre tablas y borrado en cascada 
-	/*@JoinTable(name="users_Roles",  
-	 * joinColumns=@JoinColumn(name="user_id"),  
-	 * inverseJoinColumns=@JoinColumn(name="role_id") 
-	esto es para cambiar el nombre de la tabla y establecer las relaciones del proyectos*/ 
-	 
-	private List<Role> roles; 
+	//Relacion entre tablas y borrado en cascada 
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name="usuarios_roles", joinColumns= @JoinColumn(name="usuario_id"),
+	inverseJoinColumns=@JoinColumn(name="role_id"),
+	uniqueConstraints= {@UniqueConstraint(columnNames= {"usuario_id", "role_id"})})
+	private List<Role> roles; //esto es para cambiar el nombre de la tabla y establecer las relaciones del proyectos
 	 
 	public Long getId() { 
 		return id; 
@@ -78,6 +78,6 @@ public class Usuario implements Serializable{
 	public void setRoles(List<Role> roles) { 
 		this.roles = roles; 
 	} 
- 
+
 	private static final long serialVersionUID = 1L; //Hay que implementarlo si esta la interfaz serializable 
 } 

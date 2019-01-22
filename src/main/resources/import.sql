@@ -50,7 +50,7 @@ INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Magma', 'Lee', 
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Tornado', 'Roe', '3tornado.roe@gmail.com', '2018-03-05');
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Jade', 'Doe', '3jane.doe@gmail.com', '2018-03-06');
 
-INSERT INTO usuarios (username, password, enabled) VALUES ('admin','$2a$10$Sr0yZahlEis7J1UHU4YI4OIBSopRjv325tzb3.eOsbCVzXM8E/vxe',1);
+INSERT INTO usuarios (username, password, enabled) VALUES ('admin','$2a$10$tnZnDGj85DBKSmT9QTg4q.gy9C9iRHCD8HorCLTsZVyRourbozjXq',1);
 INSERT INTO role (nombre) VALUES ('ROLE_ADMIN');
 
 INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (1, 1);

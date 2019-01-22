@@ -17,3 +17,9 @@ Tambien se puede usar el mismo user:
 si todo va bien ejecutar el proyecto como springBoot
 
 la BD de datos es drag an drop por lo que solo existe en local y cuando se esta ejecutando el proyecto
+
+GENERAR CLAVE PUBLICA Y PRIVADA
+https://slproweb.com/products/Win32OpenSSL.html
+
+privada
+	openssl genrsa -out jwt.pem

@@ -29,9 +29,9 @@ public class ArticulosRestController {
 		return articulosService.findAll();
 	}
 	
-	@GetMapping("/articulos/{page}")
+	@GetMapping("/articulos/page/{page}")
 	public Page<Articulos> index(@PathVariable Integer page){
-		Pageable pageable = PageRequest.of(page, 2);
+		Pageable pageable = PageRequest.of(page, 4);
 		return articulosService.findAllPageable(pageable);
 	}
 

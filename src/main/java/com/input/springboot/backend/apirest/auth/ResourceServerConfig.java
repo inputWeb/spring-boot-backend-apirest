@@ -12,7 +12,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/clientes").permitAll()		//permitir a todos los usuarios a nuestra api
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/clientes", "/api/clientes/page/**",  "/api/articulos", "/api/articulos/page/**").permitAll()		//permitir a todos los usuarios a nuestra api
 		.anyRequest().authenticated();		//deniega todas las rutas que no esten configuradas
 	}
 	

@@ -50,8 +50,16 @@ INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Magma', 'Lee', 
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Tornado', 'Roe', '3tornado.roe@gmail.com', '2018-03-05');
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Jade', 'Doe', '3jane.doe@gmail.com', '2018-03-06');
 
-INSERT INTO usuarios (username, password, enabled) VALUES ('admin','$2a$10$tnZnDGj85DBKSmT9QTg4q.gy9C9iRHCD8HorCLTsZVyRourbozjXq',1);
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('admin','$2a$10$tnZnDGj85DBKSmT9QTg4q.gy9C9iRHCD8HorCLTsZVyRourbozjXq',1, 'sergi', 'gimenez', 'sergi.gim@gmail.com');
 INSERT INTO role (nombre) VALUES ('ROLE_ADMIN');
 
 INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (1, 1);
 
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('1 Articulo', 'TEXTO PARA EL 1 ARTICULO', '2019-01-20', '', '1r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('2 Articulo', 'TEXTO PARA EL 2 ARTICULO', '2019-01-21', '', '1r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('3 Articulo', 'TEXTO PARA EL 3 ARTICULO', '2019-01-21', '', '2r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('4 Articulo', 'TEXTO PARA EL 4 ARTICULO', '2019-01-23', '', '2r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('5 Articulo', 'TEXTO PARA EL 5 ARTICULO', '2019-01-23', '', '3r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('6 Articulo', 'TEXTO PARA EL 6 ARTICULO', '2019-01-25', '', '1r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('7 Articulo', 'TEXTO PARA EL 7 ARTICULO', '2019-01-26', '', '2r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
+INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('8 Articulo', 'TEXTO PARA EL 8 ARTICULO', '2019-01-26', '', '2r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')

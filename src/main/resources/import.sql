@@ -50,10 +50,14 @@ INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Magma', 'Lee', 
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Tornado', 'Roe', '3tornado.roe@gmail.com', '2018-03-05');
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Jade', 'Doe', '3jane.doe@gmail.com', '2018-03-06');
 
-INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('admin','$2a$10$tnZnDGj85DBKSmT9QTg4q.gy9C9iRHCD8HorCLTsZVyRourbozjXq',1, 'sergi', 'gimenez', 'sergi.gim@gmail.com');
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('admin','$2a$10$tnZnDGj85DBKSmT9QTg4q.gy9C9iRHCD8HorCLTsZVyRourbozjXq',1, 'sergi', 'gimenez', 'sergi.gim@gmail.com');
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('sergi','$2a$10$fpZfUjBMIQLpJm..h8jAauG0ojLlWcEU4T1dudBBjUAAWCeuv7Rk2',1, 'sergiUser', 'gimenez', 'sergiUser.gim@gmail.com');
+
 INSERT INTO role (nombre) VALUES ('ROLE_ADMIN');
+INSERT INTO role (nombre) VALUES ('ROLE_USER');
 
 INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (1, 1);
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 2);
 
 INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('1 Articulo', 'TEXTO PARA EL 1 ARTICULO', '2019-01-20', '', '1r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')
 INSERT INTO articulos (titulo, texto, fecha_creacion, imagen, categoria, comentarios, autor) VALUES ('2 Articulo', 'TEXTO PARA EL 2 ARTICULO', '2019-01-21', '', '1r CATEGORIA', 'El mejor articulo de todos', 'Sergi Gimenez')

@@ -25,10 +25,10 @@ public class infoAdicionalToken implements TokenEnhancer{
 			
 		Usuario usuario = usuarioService.findByUsername(authentication.getName());				//con el user de acceso podemos obtener los el usuario original de la BD y realizar consultas
 		Map<String, Object> info = new HashMap<>();
-		info.put("info_adicional", "username".concat(authentication.getName()));		//con el hash map añadimos el nombre del  usuario
-		info.put("nombre_user", "Nombre usuario".concat(" " + usuario.getNombre()));				//obetenemos el nombre del usuario de la BD
-		info.put("apellido_user", "Apellido usuario".concat(" " + usuario.getApellido()));					//obtenemos el id del user en la BD
-		info.put("email_user", "Email usuario".concat(" " + usuario.getEmail()));
+		//info.put("info_adicional", "username".concat(authentication.getName()));		//con el hash map añadimos el nombre del  usuario
+		info.put("nombre", usuario.getNombre());				//obetenemos el nombre del usuario de la BD
+		info.put("apellido", usuario.getApellido());					//obtenemos el id del user en la BD
+		info.put("email", usuario.getEmail());	
 		
 		
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);

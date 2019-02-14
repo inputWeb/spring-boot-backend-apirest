@@ -1,6 +1,7 @@
 package com.input.springboot.backend.apirest.models.entity; 
  
 import java.io.Serializable; //permite convertir el objeto de java a JSON y en una sesion HTTP 
+import java.util.Date;
 import java.util.List; 
  
 import javax.persistence.CascadeType; 
@@ -12,8 +13,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id; 
 import javax.persistence.JoinColumn; 
 import javax.persistence.JoinTable; 
-import javax.persistence.ManyToMany; 
+import javax.persistence.ManyToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint; 
  
 @Entity //Clase mapeada a una tabla de la BD 
@@ -44,7 +48,28 @@ public class Usuario implements Serializable{
 	
 	@Column(unique=true)
 	private String email;
+	
+	@Column(length=25)
+	private String localidad;
+	
+	@Column(length=25)
+	private String provincia;
+	
+	@Column(length=12)
+	private String telefono;
+	
+	
+	@Column(name="fecha_creacion")
+	@Temporal(TemporalType.DATE)
+	private Date fechanacimiento;
+	
+	private String imagen;
 	 
+	@PrePersist
+	public void prePersist() {
+		fechanacimiento = new Date();
+	}
+	
 	public Long getId() { 
 		return id; 
 	} 
@@ -108,6 +133,48 @@ public class Usuario implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public Date getFechanacimiento() {
+		return fechanacimiento;
+	}
+
+	public void setFechanacimiento(Date fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
 
 
 

@@ -31,7 +31,7 @@ public class ArticulosRestController {
 	
 	@GetMapping("/articulos/page/{page}")
 	public Page<Articulos> index(@PathVariable Integer page){
-		Pageable pageable = PageRequest.of(page, 4);
+		Pageable pageable = PageRequest.of(page, 3);
 		return articulosService.findAllPageable(pageable);
 	}
 

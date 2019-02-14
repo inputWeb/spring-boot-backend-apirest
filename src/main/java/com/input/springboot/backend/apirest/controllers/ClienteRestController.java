@@ -30,6 +30,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -67,6 +68,7 @@ public class ClienteRestController {
 		return clienteService.findAll(pageable);
 	}
 	
+	@Secured({"ROLE_USER", "ROLE_ADMIN"})
 	@GetMapping("/clientes/{id}")								//devuelve un unico objeto
 	public ResponseEntity<?> show(@PathVariable Long id){		//se reponseentity es el objeto que se devuelve puede ser un cliente o un mensaje de error
 		
@@ -88,6 +90,7 @@ public class ClienteRestController {
 		}
 	}
 	
+	@Secured({"ROLE_ADMIN"})
 	@PostMapping("/clientes")									//añadir un objeto con metodo post			
 	public ResponseEntity<?> create(@Valid @RequestBody Cliente cliente, BindingResult result){		//parsear el objeto JSON que se le pasa
 		
@@ -115,6 +118,7 @@ public class ClienteRestController {
 		return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CREATED); 		//status 201 de HTTP	
 	}
 	
+	@Secured({"ROLE_ADMIN"})
 	@PutMapping("/clientes/{id}")
 	public ResponseEntity<?> update(@Valid @RequestBody Cliente cliente, BindingResult result, @PathVariable Long id) {  //parsea los datos del cliente y busca el cliente por id
 		
@@ -155,6 +159,7 @@ public class ClienteRestController {
 		return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CREATED); 		//status 201 de HTTP	
 	}
 	
+	@Secured({"ROLE_ADMIN"})
 	@DeleteMapping("clientes/{id}")												  //Eliminar un cliente
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		
@@ -191,6 +196,7 @@ public class ClienteRestController {
 		return new ResponseEntity<Map<String,Object>>(response, HttpStatus.OK); 		//status 204 de HTTP
 	}
 	
+	@Secured({"ROLE_USER", "ROLE_ADMIN"})
 	@PostMapping("/clientes/upload")
 	public ResponseEntity<?> upload(@RequestParam("archivo") MultipartFile archivo, @RequestParam("id") Long id){
 		
